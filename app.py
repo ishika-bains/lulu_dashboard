@@ -319,7 +319,7 @@ with tab1:
         dow = dow.sort_values("day_of_week")
         fig4 = px.bar(dow, x="day_of_week", y="Orders", title="Order Volume by Day of Week",
                       color="Orders", color_continuous_scale=["#0f1e3d", "#10b981"])
-        fig4.update_layout(**TEMPLATE["layout"], height=320, coloraxis_showscale=False)
+        fig4.update_layout( height=320, coloraxis_showscale=False)
         fig4.update_traces(marker_cornerradius=4)
         st.plotly_chart(fig4, use_container_width=True)
 
@@ -334,7 +334,7 @@ with tab1:
         showscale=True, colorbar=dict(thickness=8, tickfont=dict(color="#5a7499")),
         hovertemplate="Day: %{y}<br>Hour: %{x}:00<br>Orders: %{z}<extra></extra>"
     ))
-    fig5.update_layout(**TEMPLATE["layout"], height=260, title_text="Peak Shopping Hours")
+    fig5.update_layout( height=260, title_text="Peak Shopping Hours")
     fig5.update_xaxes(title="Hour of Day")
     st.plotly_chart(fig5, use_container_width=True)
 
@@ -362,7 +362,7 @@ with tab2:
         )
         fig.update_traces(texttemplate="AED %{text:,.0f}", textposition="outside",
                           textfont=dict(color="#5a7499", size=10), marker_cornerradius=4)
-        fig.update_layout(**TEMPLATE["layout"], height=350, coloraxis_showscale=False,
+        fig.update_layout( height=350, coloraxis_showscale=False,
                           xaxis=dict(showticklabels=False, showgrid=False))
         st.plotly_chart(fig, use_container_width=True)
 
@@ -374,7 +374,7 @@ with tab2:
             color_discrete_sequence=["#3b82f6", "#f59e0b", "#10b981", "#a78bfa", "#f43f5e", "#06b6d4", "#fbbf24", "#34d399"]
         )
         fig2.update_traces(textposition="top center", textfont=dict(size=9))
-        fig2.update_layout(**TEMPLATE["layout"], height=350, showlegend=False)
+        fig2.update_layout( height=350, showlegend=False)
         st.plotly_chart(fig2, use_container_width=True)
 
     st.markdown("<div class='section-header' style='margin-top:20px;'>Zone Performance</div>", unsafe_allow_html=True)
@@ -393,7 +393,7 @@ with tab2:
         color="city",
         color_discrete_sequence=["#3b82f6", "#f59e0b", "#10b981", "#a78bfa", "#f43f5e", "#06b6d4", "#fbbf24", "#34d399"]
     )
-    fig3.update_layout(**TEMPLATE["layout"], height=430)
+    fig3.update_layout( height=430)
     fig3.update_traces(marker_cornerradius=4)
     st.plotly_chart(fig3, use_container_width=True)
 
@@ -412,7 +412,7 @@ with tab2:
         text=[[f"AED {v:,.0f}" for v in row] for row in cd_pivot.values],
         texttemplate="%{text}", textfont=dict(size=9, color="#7090b0"),
     ))
-    fig4.update_layout(**TEMPLATE["layout"], height=320, title_text="Revenue Heatmap: City × Department")
+    fig4.update_layout( height=320, title_text="Revenue Heatmap: City × Department")
     st.plotly_chart(fig4, use_container_width=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -435,7 +435,7 @@ with tab3:
                      title="Avg Revenue: Promo vs No Promo",
                      color="Label",
                      color_discrete_map={"No Promo": "#334155", "With Promo": "#3b82f6"})
-        fig.update_layout(**TEMPLATE["layout"], height=280, showlegend=False)
+        fig.update_layout( height=280, showlegend=False)
         fig.update_traces(marker_cornerradius=6)
         st.plotly_chart(fig, use_container_width=True)
 
@@ -444,7 +444,7 @@ with tab3:
                       title="Avg Units per Order",
                       color="Label",
                       color_discrete_map={"No Promo": "#334155", "With Promo": "#f59e0b"})
-        fig2.update_layout(**TEMPLATE["layout"], height=280, showlegend=False)
+        fig2.update_layout( height=280, showlegend=False)
         fig2.update_traces(marker_cornerradius=6)
         st.plotly_chart(fig2, use_container_width=True)
 
@@ -454,7 +454,7 @@ with tab3:
                       color="Label",
                       color_discrete_map={"No Promo": "#1e2d47", "With Promo": "#3b82f6"},
                       hole=0.55)
-        fig3.update_layout(**TEMPLATE["layout"], height=280)
+        fig3.update_layout( height=280)
         fig3.update_traces(textinfo="percent+label", textfont_size=11)
         st.plotly_chart(fig3, use_container_width=True)
 
@@ -474,7 +474,7 @@ with tab3:
                       title="Revenue by Promo Type",
                       color="promo_code_type",
                       color_discrete_sequence=["#3b82f6", "#f59e0b", "#10b981", "#a78bfa"])
-        fig4.update_layout(**TEMPLATE["layout"], height=300, showlegend=False)
+        fig4.update_layout( height=300, showlegend=False)
         fig4.update_traces(marker_cornerradius=6)
         st.plotly_chart(fig4, use_container_width=True)
 
@@ -483,7 +483,7 @@ with tab3:
                       title="Transaction Count by Promo Type",
                       color="promo_code_type",
                       color_discrete_sequence=["#3b82f6", "#f59e0b", "#10b981", "#a78bfa"])
-        fig5.update_layout(**TEMPLATE["layout"], height=300, showlegend=False)
+        fig5.update_layout( height=300, showlegend=False)
         fig5.update_traces(marker_cornerradius=6)
         st.plotly_chart(fig5, use_container_width=True)
 
@@ -500,7 +500,7 @@ with tab3:
         text=pc_pivot.values,
         texttemplate="%{text}", textfont=dict(size=11, color="#7090b0"),
     ))
-    fig6.update_layout(**TEMPLATE["layout"], height=300, title_text="Promo Type Usage Heatmap by City")
+    fig6.update_layout( height=300, title_text="Promo Type Usage Heatmap by City")
     st.plotly_chart(fig6, use_container_width=True)
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -522,7 +522,7 @@ with tab4:
                      title="Transaction Share by Payment Method",
                      color_discrete_sequence=["#3b82f6", "#f59e0b", "#10b981", "#a78bfa", "#f43f5e"],
                      hole=0.5)
-        fig.update_layout(**TEMPLATE["layout"], height=320)
+        fig.update_layout( height=320)
         fig.update_traces(textinfo="percent+label", textfont_size=11,
                           marker=dict(line=dict(color="#080c14", width=2)))
         st.plotly_chart(fig, use_container_width=True)
@@ -536,7 +536,7 @@ with tab4:
                       text="Avg_Value")
         fig2.update_traces(texttemplate="AED %{text:,.0f}", textposition="outside",
                            textfont=dict(color="#5a7499", size=10), marker_cornerradius=4)
-        fig2.update_layout(**TEMPLATE["layout"], height=320, showlegend=False,
+        fig2.update_layout( height=320, showlegend=False,
                            xaxis=dict(showticklabels=False, showgrid=False))
         st.plotly_chart(fig2, use_container_width=True)
 
@@ -551,7 +551,7 @@ with tab4:
                       title="Payment Method Mix by City",
                       color_discrete_sequence=["#3b82f6", "#f59e0b", "#10b981", "#a78bfa", "#f43f5e"],
                       barmode="stack")
-        fig3.update_layout(**TEMPLATE["layout"], height=340)
+        fig3.update_layout( height=340)
         fig3.update_traces(marker_cornerradius=2)
         st.plotly_chart(fig3, use_container_width=True)
 
@@ -563,7 +563,7 @@ with tab4:
                        title="Payment Method Trend Over Time",
                        color_discrete_sequence=["#3b82f6", "#f59e0b", "#10b981", "#a78bfa", "#f43f5e"],
                        markers=True)
-        fig4.update_layout(**TEMPLATE["layout"], height=340)
+        fig4.update_layout( height=340)
         fig4.update_traces(line_width=2, marker_size=7)
         st.plotly_chart(fig4, use_container_width=True)
 
@@ -582,7 +582,7 @@ with tab4:
                    title="Payment Category Adoption Trend",
                    color_discrete_sequence=["#3b82f6", "#10b981", "#f59e0b", "#f43f5e"],
                    labels={"order_id": "Orders"})
-    fig5.update_layout(**TEMPLATE["layout"], height=280)
+    fig5.update_layout( height=280)
     st.plotly_chart(fig5, use_container_width=True)
 
 # ─── Footer ────────────────────────────────────────────────────────────────────
