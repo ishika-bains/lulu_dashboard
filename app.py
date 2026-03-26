@@ -291,7 +291,7 @@ with tab1:
             color="Orders",
             color_continuous_scale=["#0f1e3d", "#3b82f6"],
         )
-        fig2.update_layout(**TEMPLATE["layout"], height=300, coloraxis_showscale=False)
+        fig2.update_layout(height=300, coloraxis_showscale=False)
         fig2.update_traces(marker_cornerradius=4)
         st.plotly_chart(fig2, use_container_width=True)
 
@@ -307,7 +307,7 @@ with tab1:
         fig3 = px.bar(dept, x="Revenue", y="department", orientation="h",
                       color="Quantity", color_continuous_scale=["#0f1e3d", "#f59e0b"],
                       title="Revenue by Department (color = Units)")
-        fig3.update_layout(**TEMPLATE["layout"], height=320, coloraxis_showscale=True)
+        fig2.update_layout(height=300, coloraxis_showscale=False)
         fig3.update_coloraxes(colorbar=dict(thickness=8, len=0.6, tickfont=dict(color="#5a7499")))
         fig3.update_traces(marker_cornerradius=4)
         st.plotly_chart(fig3, use_container_width=True)
