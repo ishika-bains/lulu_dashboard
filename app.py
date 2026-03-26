@@ -279,7 +279,7 @@ with tab1:
             line=dict(color=COLORS["amber"], width=2.5),
             marker=dict(size=7, color=COLORS["amber"]),
         ), secondary_y=True)
-        fig.update_layout(**TEMPLATE["layout"], height=300, title_text="Revenue vs Units Sold by Month")
+        fig.update_layout(height=300, title_text="Revenue vs Units Sold by Month")
         fig.update_yaxes(title_text="Revenue (AED)", secondary_y=False, tickformat=",.0f")
         fig.update_yaxes(title_text="Units Sold", secondary_y=True)
         st.plotly_chart(fig, use_container_width=True)
